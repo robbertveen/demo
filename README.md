@@ -18,7 +18,7 @@ Using the ansible-galaxy command line tool that comes bundled with Ansible, you 
 
 $ ansible-galaxy init test-role-1
 
-# my work environment on OXS
+# my work environment on OXS.
 
 docker : https://docs.docker.com/desktop/install/mac-install/
 ansible : https://medium.com/javarevisited/how-to-install-ansible-on-mac-2baf00d42466

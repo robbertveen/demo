@@ -1,6 +1,6 @@
 docker run -t -d --name KALI-RCV -p 25900:5900 -p 25901:5901 kalilinux/kali-rolling:latest
 
-####.  https://dog.wtf/tech/run-kali-in-docker-and-install-desktop-environment-and-vnc/
+####. https://dog.wtf/tech/run-kali-in-docker-and-install-desktop-environment-and-vnc/
 
 apt update
 apt upgrade
@@ -14,9 +14,10 @@ tightvncserver :0 -geometry 1280x800 -depth 16 -pixelformat rgb565
 #in SAFARI
 vnc://127.0.0.1:25900
 
-# install web 
+# install web
+
 apt install net-tools
 apt install novnc
 /usr/share/novnc/utils/launch.sh --listen 5901 --vnc localhost:5900
 
-http://127.0.0.1:25901/vnc.html 
+http://127.0.0.1:25901/vnc.html
