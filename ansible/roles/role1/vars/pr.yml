@@ -1,0 +1,40 @@
+---
+server_memory_size: 5048mb
+env: pr
+
+common_env_files:
+  - filepath: "files/pr/keys/"
+    filename: "agf_out_keyStore.p12"
+    dest: "/tmp"
+  - filepath: "files/pr/keys/"
+    filename: "agf_in_trustStore.p12"
+    dest: "/tmp"
+  - filepath: "files/pr/keys/"
+    filename: "agf_out_trustStore.p12"
+    dest: "/tmp"
+  - filepath: "files/pr/"
+    filename: "AGB_USER.txt"
+    dest: "/tmp"
+  - filepath: "files/pr/"
+    filename: "databaseConfig.xml"
+    dest: "/tmp"
+  - filepath: "files/pr/"
+    filename: "sslConfig.xml"
+    dest: "/tmp"
+
+specific_st01_files:
+  - filepath: "files/pr/keys/01/"
+    filename: "agf_in_keyStore_01.txt"
+    dest: "/tmp"
+  - filepath: "files/pr/01/"
+    filename: "jvm.options"
+    dest: "/tmp"
+  - filepath: "files/pr/01/"
+    filename: "iiq_files.txt"
+    dest: "/tmp"
+  - filepath: "files/pr/01/"
+    filename: "iiq_values.txt"
+    dest: "/tmp"
+  - filepath: "files/pr/01/"
+    filename: "bootstrap.properties"
+    dest: "/tmp"

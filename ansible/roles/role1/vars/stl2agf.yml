@@ -1,0 +1,15 @@
+keystore: "files/st/keys/stl2agf/agf_in_keyStore_01.txt"
+
+specific_agf_files:
+  - filepath: "files/st/stl2agf/"
+    filename: "jvm.options"
+    dest: "/tmp"
+  - filepath: "files/st/stl2agf/"
+    filename: "iiq_files.txt"
+    dest: "/tmp"
+  - filepath: "files/st/stl2agf/"
+    filename: "iiq_values.txt"
+    dest: "/tmp"
+  - filepath: "files/st/stl2agf/"
+    filename: "bootstrap.properties"
+    dest: "/tmp"

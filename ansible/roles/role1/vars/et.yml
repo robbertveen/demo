@@ -1,0 +1,23 @@
+---
+server_memory_size: 5048mb
+env: et
+
+common_env_files:
+  - filepath: "files/et/keys/"
+    filename: "agf_out_keyStore.p12"
+    dest: "/tmp"
+  - filepath: "files/et/keys/"
+    filename: "agf_in_trustStore.p12"
+    dest: "/tmp"
+  - filepath: "files/et/keys/"
+    filename: "agf_out_trustStore.p12"
+    dest: "/tmp"
+  - filepath: "files/et/"
+    filename: "AGB_USER.txt"
+    dest: "/tmp"
+  - filepath: "files/et/"
+    filename: "databaseConfig.xml"
+    dest: "/tmp"
+  - filepath: "files/et/"
+    filename: "sslConfig.xml"
+    dest: "/tmp"

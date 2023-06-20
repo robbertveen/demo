@@ -1,0 +1,5 @@
+#!/bin/bash
+
+CONTAINERNAME="KALI_RCV"
+docker stop $CONTAINERNAME
+docker rm $CONTAINERNAME

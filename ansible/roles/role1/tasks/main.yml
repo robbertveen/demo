@@ -1,0 +1,82 @@
+---
+# tasks file for create-db-user
+- include_vars:
+    file: "{{ item }}"
+  with_items:
+    - vars/common.yml
+    - vars/{{ env }}.yml
+    - vars/{{ inventory_hostname }}.yml
+    # - vars/secure.yml
+
+- name: What is my inventory_hostname
+  debug: var=inventory_hostname
+
+# - name: What is my ansible_hostname
+#   debug: var=ansible_hostname
+
+# - name: debug value task common_ut_files
+#   debug: var=common_ut_files
+
+# - name: debug value common_files
+#   debug: var=common_files
+
+# - name: debug in main
+#   debug: msg="{{ item.vmname }} - {{ item.jvmpath}}- {{ item.instance}}"
+#   with_items:
+#     - "{{ vm_settings }}"
+
+#main debug files
+- name: debug in files
+  debug: msg="{{ item.filepath }} - {{ item.filename}} - {{ item.dest}}"
+  with_items:
+    - "{{ common_files }}"
+    - "{{ common_env_files }}"
+
+# - name: copy common files
+#   ansible.builtin.copy:
+#     src: "{{ item.filepath }}{{ item.filename }}"
+#     dest: "{{ item.dest }}/{{ item.filename }}"
+#     owner: root
+#     group: root
+#     mode: "0755"
+#   with_items:
+#     - "{{ common_files }}"
+
+# - name: copy common env files
+#   ansible.builtin.copy:
+#     src: "{{ item.filepath }}{{ item.filename }}"
+#     dest: "/tmp/{{ item.filename }}"
+#     owner: root
+#     group: root
+#     mode: "0755"
+#   with_items:
+#     - "{{ common_env_files }}"
+
+- name: check EDIT_WAR
+  stat:
+    path: "{{ EDIT_WAR }}"
+  register: register_name
+
+# - name: Task name EDIT_WAR
+#   debug:
+#     msg: "The file {{ EDIT_WAR }} or directory exists"
+#   when: register_name.stat.exists
+
+- name: Execute {{EDIT_WAR}}  working directory {{ WORKDIR }}
+  ansible.builtin.shell: "{{ EDIT_WAR }} >> {{ LOGGING_FILE }}"
+  args:
+    chdir: "{{ WORKDIR }}"
+  when: register_name.stat.exists
+
+- name: copy keystore
+  debug: var=keystore
+
+- name: copy keystore
+  ansible.builtin.copy:
+    src: "{{ keystore }}"
+    dest: "/tmp/keystore.p12"
+    owner: root
+    group: root
+    mode: "0644"
+#   with_items:
+#     - "{{ common_env_files }}"

@@ -1,0 +1,57 @@
+---
+# tasks file for create-db-user
+- include_vars: secure.yml
+
+- name: Install aptitude
+  apt:
+    name: aptitude
+    state: latest
+    update_cache: true
+
+- name: copy templatefile
+  template:
+    src: template/test.j2
+    dest: "/tmp/{{ item }}.html"
+    owner: root
+    group: root
+    force: yes
+    mode: 0644
+  loop:
+    - "{{ web_sites }}"
+
+# - name: Using dict2items
+#   ansible.builtin.debug:
+#     msg: "{{ item.key }} - {{ item.value }}"
+#   loop: "{{ tag_data | dict2items }}"
+#   vars:
+#     tag_data:
+#       Environment: dev
+#       Application: payment
+
+- name: debug in main
+  debug: msg="{{ item.vmname }} - {{ item.jvmpath}}- {{ item.instance}}"
+  with_items:
+    - "{{ vm_settings }}"
+# - name: copy common pr files
+#   ansible.builtin.copy:
+#     src: "template/{{ item }}"
+#     dest: /"tmp/{{ item }}"
+#     owner: root
+#     group: root
+#     mode: "0644"
+#   loop:
+#     - "{{ copy_files_pr }}"
+#   tags:
+#     - PR
+
+# - name: copy common pr files
+#   ansible.builtin.copy:
+#     src: "template/{{ item }}"
+#     dest: "/tmp/{{ item }}"
+#     owner: root
+#     group: root
+#     mode: "0644"
+#   with_items:
+#     - "{{ copy_files_pr }}"
+#   tags:
+#     - ET

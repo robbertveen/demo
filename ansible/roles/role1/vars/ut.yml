@@ -1,0 +1,40 @@
+---
+server_memory_size: 5048mb
+env: ut
+
+common_env_files:
+  - filepath: "files/ut/keys/"
+    filename: "agf_out_keyStore.p12"
+    dest: "/tmp"
+  - filepath: "files/ut/keys/"
+    filename: "agf_in_trustStore.p12"
+    dest: "/tmp"
+  - filepath: "files/ut/keys/"
+    filename: "agf_out_trustStore.p12"
+    dest: "/tmp"
+  - filepath: "files/ut/"
+    filename: "AGB_USER.txt"
+    dest: "/tmp"
+  - filepath: "files/ut/"
+    filename: "databaseConfig.xml"
+    dest: "/tmp"
+  - filepath: "files/ut/"
+    filename: "sslConfig.xml"
+    dest: "/tmp"
+
+specific_ut01_files:
+  - filepath: "files/ut/keys/01"
+    filename: "agf_in_keyStore_ut01.txt"
+    dest: "/tmp"
+  - filepath: "files/ut/ut01/"
+    filename: "jvm.options"
+    dest: "/tmp"
+  - filepath: "files/ut/ut01/"
+    filename: "iiq_files.txt"
+    dest: "/tmp"
+  - filepath: "files/ut/ut01/"
+    filename: "iiq_values.txt"
+    dest: "/tmp"
+  - filepath: "files/ut/ut01/"
+    filename: "bootstrap.properties"
+    dest: "/tmp"

@@ -1,0 +1,16 @@
+FROM node:latest as build
+
+COPY . /www/app
+
+RUN npm install -g ionic
+#RUN npm install @swimlane/ngx-datatable
+#RUN npm install @capacitor/storage
+#RUN npm install --save @ionic-native/splash-screen
+#RUN npm install @ionic-native/status-bar
+
+WORKDIR /www/app
+RUN npm install
+
+EXPOSE 8100
+ENTRYPOINT [ "ionic" ]
+CMD [ "serve" , "8100", "--address", "0.0.0.0"]

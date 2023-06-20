@@ -1,0 +1,17 @@
+[local]
+utl2agf ansible_connection=docker
+stl2agf ansible_connection=docker
+etl2agf ansible_connection=docker
+prl2agf ansible_connection=docker
+
+[ut-group]
+utl2agf ansible_connection=docker
+
+[st-group]
+stl2agf ansible_connection=docker
+
+[et-group]
+etl2agf ansible_connection=docker
+
+[pr-group]
+prl2agf ansible_connection=docker

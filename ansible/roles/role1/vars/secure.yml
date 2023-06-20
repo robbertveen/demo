@@ -1,0 +1,23 @@
+---
+INSTANCE: "testinstance"
+version_number: "2.4.37"
+server: "MY-OWN_SERVER"
+a_variable: "dumyvar"
+web_sites: ["a", "b", "c", "d"]
+copy_files_pr: ["test_cert.txt", "readme.txt"]
+test_items:
+  - name: test1
+    property: 1
+  - name: test2
+    property: 2
+vm_settings:
+  - vmname: vm40005580
+    jvmpath: /appl/was/java
+    instance: stl2agb
+  - vmname: vm40005590
+    jvmpath: /appl/was/java
+    instance: stl3agb
+  - vmname: vm40005595
+    jvmpath: /appl/was/java
+    instance: stl4agb
+server_memory_size: 1024mb
